@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabla Estilizada</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f3f4f6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <div
+      class="container mx-auto p-4 md:p-8 bg-white shadow-lg rounded-lg max-w-4xl w-full"
+    >
+      <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">
+        Datos de Usuarios
+      </h2>
+      <div class="overflow-x-auto rounded-lg shadow-md">
+        <table class="min-w-full divide-y divide-gray-200 mt-8">
+          <thead class="bg-gray-800">
+            <tr>
+              <th
+                scope="col"
+                class="px-6 py-4 text-left text-base font-semibold text-white uppercase tracking-wider rounded-tl-lg"
+              >
+                Nombres
+              </th>
+              <th
+                scope="col"
+                class="px-6 py-4 text-left text-base font-semibold text-white uppercase tracking-wider"
+              >
+                Apellidos
+              </th>
+              <th
+                scope="col"
+                class="px-6 py-4 text-left text-base font-semibold text-white uppercase tracking-wider rounded-tr-lg"
+              >
+                Correo
+              </th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200">
+            {% for persona in personas %}
+            <tr>
+              <td
+                class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+              >
+                {{ persona[0] }}
+              </td>
+
+              <td
+                class="px-6 py-4 whitespace-nowrap text-sm text-gray-700>{{ persona[1] }}</td>
+                    <td class="
+                px-6
+                py-4
+                whitespace-nowrap
+                text-sm
+                text-gray-700
+              >
+                {{ persona[1] }}
+              </td>
+              <td
+                class="px-6 py-4 whitespace-nowrap text-sm text-gray-700>{{ persona[1] }}</td>
+                    <td class="
+                px-6
+                py-4
+                whitespace-nowrap
+                text-sm
+                text-gray-700
+              >
+                {{ persona[2] }}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
